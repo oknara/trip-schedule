@@ -868,46 +868,35 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".day-card");
   const tabs = document.querySelectorAll(".day-link");
 
-  function setActiveByScroll() {
-    let closestSection = null;
-    let minDistance = Infinity;
+  function setActive() {
+    let current = "";
+
+    const containerTop = scrollArea.getBoundingClientRect().top;
+    const centerLine = containerTop + scrollArea.clientHeight / 2;
 
     sections.forEach(section => {
-      const date = section.querySelector(".date");
-      const rect = date.getBoundingClientRect();
-      const containerRect = scrollArea.getBoundingClientRect();
+      const rect = section.getBoundingClientRect();
 
-      const distance = Math.abs(rect.top - containerRect.top - 100);
-
-      if (distance < minDistance) {
-        minDistance = distance;
-        closestSection = section;
+      if (rect.top <= centerLine && rect.bottom >= centerLine) {
+        current = section.id;
       }
     });
 
-    if (closestSection) {
-      const id = closestSection.getAttribute("id");
-
+    if (current) {
       tabs.forEach(tab => {
         tab.classList.remove("active");
-        if (tab.getAttribute("href") === "#" + id) {
+        if (tab.getAttribute("href") === "#" + current) {
           tab.classList.add("active");
         }
       });
     }
   }
 
-  scrollArea.addEventListener("scroll", setActiveByScroll);
+  scrollArea.addEventListener("scroll", setActive);
 
-  // 탭 클릭 시 즉시 active 처리
-  tabs.forEach(tab => {
-    tab.addEventListener("click", function () {
-      tabs.forEach(t => t.classList.remove("active"));
-      this.classList.add("active");
-    });
-  });
+  // 첫 로드 시 실행
+  setActive();
 
-  setActiveByScroll();
 });
 </script>
 </html>
