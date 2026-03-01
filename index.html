@@ -21,7 +21,6 @@
 body {
     width: 100%;
     height: 100%;
-    overflow: hidden;
     font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     background: #eef2f7;
 }
@@ -80,7 +79,7 @@ h2 {
 /*스크롤 영역*/
 .scroll-area{
     flex: 1;
-    max-height: calc(100vh - 157.5px);
+    max-height: calc(100vh - 158px);
     overflow-y: auto;
     scrollbar-width: none;
 }
@@ -864,8 +863,10 @@ h2 {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    const scrollArea = document.querySelector(".scroll-area");
     const sections = document.querySelectorAll(".day-card");
     const buttons = document.querySelectorAll(".tap-button");
+    const links = document.querySelectorAll(".day-link");
 
     function activateTab() {
         let current = "";
@@ -873,7 +874,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
 
-            if (rect.top <= 157.5) {
+            if (rect.top <= 158) {
                 current = section.id;
             }
         });
