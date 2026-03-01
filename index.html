@@ -864,38 +864,29 @@ h2 {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const scrollArea = document.querySelector(".scroll-area");
-  const sections = document.querySelectorAll(".day-card");
-  const tabs = document.querySelectorAll(".day-link");
+    const sections = document.querySelectorAll(".day-card");
+    const buttons = document.querySelectorAll(".tap-button");
 
-  function setActive() {
-    let current = "";
+    function activateTab() {
+        let current = "";
 
-    const containerTop = scrollArea.getBoundingClientRect().top;
-    const centerLine = containerTop + scrollArea.clientHeight / 2;
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
 
-    sections.forEach(section => {
-      const rect = section.getBoundingClientRect();
+            if (rect.top <= 171) {
+                current = section.id;
+            }
+        });
 
-      if (rect.top <= centerLine && rect.bottom >= centerLine) {
-        current = section.id;
-      }
-    });
+        buttons.forEach(btn => btn.classList.remove("active"));
 
-    if (current) {
-      tabs.forEach(tab => {
-        tab.classList.remove("active");
-        if (tab.getAttribute("href") === "#" + current) {
-          tab.classList.add("active");
+        if (current) {
+            const activeBtn = document.querySelector(`a[href="#${current}"] .tap-button`);
+            if (activeBtn) activeBtn.classList.add("active");
         }
-      });
     }
-  }
 
-  scrollArea.addEventListener("scroll", setActive);
-
-  // 첫 로드 시 실행
-  setActive();
+    document.querySelector(".scroll-area").addEventListener("scroll", activateTab);
 
 });
 </script>
