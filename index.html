@@ -864,31 +864,36 @@ h2 {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const sections = document.querySelectorAll(".day-card");
-    const buttons = document.querySelectorAll(".tap-button");
+  const scrollArea = document.querySelector(".scroll-area");
+  const sections = document.querySelectorAll(".day-card");
+  const tabs = document.querySelectorAll(".day-link");
 
-    function activateTab() {
-        let current = "";
+  function setActiveTab() {
+    let current = "";
 
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
+    sections.forEach(section => {
+      const date = section.querySelector(".date");
+      const rect = date.getBoundingClientRect();
+      const containerRect = scrollArea.getBoundingClientRect();
 
-            if (rect.top <= 150) {
-                current = section.id;
-            }
-        });
+      if (rect.top <= containerRect.top + 80) {
+        current = section.getAttribute("id");
+      }
+    });
 
-        buttons.forEach(btn => btn.classList.remove("active"));
+    tabs.forEach(tab => {
+      tab.classList.remove("active");
+      if (tab.getAttribute("href") === "#" + current) {
+        tab.classList.add("active");
+      }
+    });
+  }
 
-        if (current) {
-            const activeBtn = document.querySelector(`a[href="#${current}"] .tap-button`);
-            if (activeBtn) activeBtn.classList.add("active");
-        }
-    }
+  scrollArea.addEventListener("scroll", setActiveTab);
 
-    document.querySelector(".scroll-area").addEventListener("scroll", activateTab);
+  // 처음 로드 시 한 번 실행
+  setActiveTab();
 
 });
-</script>
 </script>
 </html>
