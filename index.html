@@ -27,7 +27,7 @@ body {
 .container {
     max-width: 780px;
     margin: auto;
-    padding: 24px 20px 0;
+    padding: 20px 20px 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -127,6 +127,16 @@ h2 {
     text-align: right;
 }
 
+.info-box {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
 .timeline {
     border-left: 2px solid #3f72ff;
     padding-left: 20px;
@@ -166,11 +176,10 @@ h2 {
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: -3%;
-}
-.red {
-    color: rgb(229, 0, 0);
-    font-weight: 600;
-    font-size: 13px;
+    a {
+        color: #000;
+        text-decoration: none;
+    }
 }
 .line {
     margin-top: 12px;
@@ -243,7 +252,7 @@ h2 {
 <body>
     <div class="container">
         <h1>세미 유럽여행 5박 7일 일정표</h1>
-        <h2>[🇫🇷프랑스 - 🇨🇭스위스]</h2>
+        <h2>[🇫🇷파리 - 🇨🇭스위스]</h2>
 
         <div class="tap-wrapper">
             <a href="#day-1" class="day-link">
@@ -266,6 +275,9 @@ h2 {
             </a>
             <a href="#day-7" class="day-link">
                 <span class="tap-button">7일</span>
+            </a>
+            <a href="#notice" class="day-link">
+                <span class="tap-button">준비물</span>
             </a>
         </div>
 
@@ -292,15 +304,16 @@ h2 {
                     <div class="timeline-item">
                         <div class="time">10:10 - 18:10</div>
                         <div class="transport">비행기 (15시간 소요)</div>
-                        <div class="activity">인천공항 ➡️ 파리공항</div>
+                        <div class="activity">인천공항 ➡️ 파리(샤를드골)공항</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">19:00 - 20:30</div>
-                        <div class="transport">한인택시 (1시간 30분 소요)</div>
-                        <div class="activity">
-                            파리공항 ➡️ 숙소<br />
-                            <span class="red">00시 택시 탑승</span>
+                        <div class="transport">픽업택시 (1시간 30분 소요)</div>
+                        <div class="activity">파리(샤를드골)공항 ➡️ 숙소</div>
+                        <div class="info-box">
+                            <div>✔️ 19시 10분 전까지 택시 탑승</div>
+                            <div>✔️ 숙소 위치 [<a href="https://maps.app.goo.gl/e5JTtpfL4FhmXm6T9">지도 링크</a>]</div>
                         </div>
                     </div>
 
@@ -343,8 +356,13 @@ h2 {
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="time">7:00 - 8:00</div>
-                        <div class="transport">버스 & 광역전철 (1시간 소요)</div>
-                        <div class="activity">숙소 ➡️ 베르사유 궁전 / 쿱마트 점심 구매</div>
+                        <div class="transport">버스 & 광역전철(RERC) (1시간 소요)</div>
+                        <div class="activity">숙소 ➡️ 베르사유 궁전 / 마트 점심 구매
+                        </div>
+                        <div class="info-box">
+                            <div>✔️ 경로 [<a href="https://maps.app.goo.gl/RhUJd4bUcBuU85fx7">지도 링크</a>]</div>
+                            <div>✔️ 마트 [<a href="https://maps.app.goo.gl/FEqSuGXC7Xj2WJKHA">지도 링크</a>], 베이커리 [<a href="https://maps.app.goo.gl/vDHK15pLz2jFUmhZ8">지도 링크</a>]</div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
@@ -356,19 +374,25 @@ h2 {
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/1-2.%20%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B2%E1%84%80%E1%85%AE%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%AB.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/1-3.%20%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B2%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB.png?raw=true">
                         </div>
+                        <div class="info-box">
+                            <div>✔️ 베르사유 궁전 [<a href="https://maps.app.goo.gl/EdMzTtuiAjrgKgJA9">지도 링크</a>]</div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">14:30 - 15:30</div>
-                        <div class="transport">광역전철 (40분 소요)</div>
+                        <div class="transport">광역전철(RERC) (40분 소요)</div>
                         <div class="activity">베르사유 궁전 ➡️ 파리 시내</div>
+                        <div class="info-box">
+                            <div>✔️ 경로 [<a href="https://maps.app.goo.gl/Qvbr3SG7ocK2FgU9A">지도 링크</a>]</div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">15:30 ~</div>
                         <div class="transport">도보</div>
-                        <div class="activity">비르하켐 다리 / 트로카데로 광장 / 에펠탑</div>
-                        <div class="activity">에투알 개선문 / 샹젤리제 거리 / 프리팔레 / 알렉상드르 3세 다리 / 띌르히 가든</div>
+                        <div class="activity">에펠탑(마르스 광장, 트로카데로 광장) ➡️</div>
+                        <div class="activity">에투알 개선문 ➡️ 샹젤리제 거리 ➡️ 프리팔레 ➡️ 알렉상드르 3세 다리 ➡️ 띌르히 가든</div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/2-1.%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A1%E1%84%83%E1%85%A6%E1%84%85%E1%85%A9%E1%84%80%E1%85%AA%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/2-2.%20%E1%84%8B%E1%85%A6%E1%84%90%E1%85%AE%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB.png?raw=true">
@@ -420,14 +444,19 @@ h2 {
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/3-1.%20%E1%84%86%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A1%E1%84%85%E1%85%B3%E1%84%84%E1%85%B3%E1%84%89%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/3-2.%20%E1%84%86%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A1%E1%84%85%E1%85%B3%E1%84%84%E1%85%B3%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%83%E1%85%A5%E1%86%A8.png?raw=true">
                         </div>
+                        <div class="info-box">
+                            <div>✔️ 몽마르뜨 언덕/성당 [<a href="https://maps.app.goo.gl/5gXszEweuv3U62pz9">지도 링크</a>]</div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">10:30 - 12:00</div>
-                        <div class="transport">한인택시 (1시간 30분 소요)</div>
+                        <div class="transport">샌딩택시 (1시간 30분 소요)</div>
                         <div class="activity">
-                            숙소 ➡️ 파리공항<br />
-                            <span class="red">00시 택시 탑승</span>
+                            숙소 ➡️ 파리(샤를드골)공항
+                        </div>
+                        <div class="info-box">
+                            <div>✔️ 숙소 앞에서 11시 택시 탑승</div>
                         </div>
                     </div>
 
@@ -853,6 +882,68 @@ h2 {
                     <div class="meal-card">
                         <div class="meal-title">석식</div>
                         <div class="meal-content">공항</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================= 준비물 ================= -->
+            <div id="notice" class="day-card">
+                <div class="day-title">
+                    <span class="date">준비물/안내사항</span>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="time">수하물(캐리어)</div>
+                        <div class="activity">
+                            ❌ 라이터<br>
+                            ❌ 배터리가 내장된 기기<br>
+                            ✅ 음식물(햇반, 김치, 국 등)<br>
+                            ✅ 가위&칼
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">기내 보안검색대</div>
+                        <div class="activity">
+                            ❌ 음식물&물(보안검색대 통화 후 구매한 것은 OK)<br>
+                            ✅ 화장품<br>
+                            ✅ 라이터 1개<br>
+                            ✅ 보조배터리 2개<br>
+                            ✅ 배터리가 내장된 기기<br>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">기내</div>
+                        <div class="activity">
+                            🔘 일회용 슬리퍼(성민 준비)<br>
+                            🔘 물통<br>
+                            🔘 목배게<br>
+                            🔘 미스트(건조함)<br>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">환전</div>
+                        <div class="activity">
+                            🔘 프랑스(유로) : SG bank - 10만원 정도<br>
+                            🔘 스위스(프랑) : - 10만원 정도
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">생필품</div>
+                        <div class="activity">
+                            🔘 휴대폰 스트랩(소연 준비)<br>
+                            🔘 멀티탭(소연 준비)<br>
+                            🔘 고산병약(성민 준비), 타이레롤(소연 준비), 밴드<br>
+                            🔘 스위스&한국 국기(소연 준비)<br>
+                            🔘 햇반, 김치, 국 등 & 일회용품<br>
+                            🔘 물티슈(소연 준비)<br>
+                            🔘 선글라스, 장갑<br>
+                            🔘 지퍼백&크린백(소연 준비)<br>
+                        </div>
                     </div>
                 </div>
             </div>
