@@ -49,6 +49,7 @@ h2 {
 .tap-wrapper{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 4px;
     margin-bottom: 16px;
@@ -66,6 +67,7 @@ h2 {
     background-color: #ffffff;
     color: #052782;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 .tap-button:hover{
     background-color: #3f72ff;
@@ -126,15 +128,32 @@ h2 {
     color: #666;
     text-align: right;
 }
+.point {
+    color: #ba0000;
+}
 
-.info-box {
-    margin-top: 8px;
-    padding: 8px;
-    background: #f8f8f8;
-    border: 1px solid #ddd;
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 6px;
+}
+.link-btn {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #f4f4f4;
+    color: #444;
     border-radius: 4px;
-    font-weight: 500;
     font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    white-space: nowrap;
+}
+.link-btn:hover {
+    background: #ddd;
+    color: #444;
+    border-color: #ccc;
 }
 
 .timeline {
@@ -166,13 +185,13 @@ h2 {
 }
 .transport {
     font-size: 13px;
-    color: #888;
+    color: #666;
     margin-top: 2px;
     letter-spacing: -3%;
 }
 .activity {
     margin-top: 4px;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     line-height: 1.5;
     letter-spacing: -3%;
@@ -277,7 +296,7 @@ h2 {
                 <span class="tap-button">7일</span>
             </a>
             <a href="#notice" class="day-link">
-                <span class="tap-button">📌</span>
+                <span class="tap-button">📌준비물</span>
             </a>
         </div>
 
@@ -291,8 +310,8 @@ h2 {
                 </div>
                 <div class="timeline">
                     <div class="timeline-item">
-                        <div class="time">5:55 - 7:10</div>
-                        <div class="transport">지하철 (1시간 10분 소요)</div>
+                        <div class="time">6:30 - 7:10</div>
+                        <div class="transport">택시 (40분 소요)</div>
                         <div class="activity">서울 ➡️ 인천공항</div>
                     </div>
 
@@ -303,17 +322,16 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">10:10 - 18:10</div>
-                        <div class="transport">비행기 (15시간 소요)</div>
-                        <div class="activity">인천공항 ➡️ 파리(샤를드골)공항</div>
+                        <div class="transport">비행기 (15시간 소요) - 티웨이 항공</div>
+                        <div class="activity">인천공항 1T ➡️ 파리(샤를드골)공항</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">19:00 - 20:30</div>
-                        <div class="transport">픽업택시 (1시간 30분 소요)</div>
+                        <div class="transport">픽업택시 (1시간 30분 소요) <span class="point">*19시 10분 전까지 탑승</span></div>
                         <div class="activity">파리(샤를드골)공항 ➡️ 숙소</div>
-                        <div class="info-box">
-                            <div>✔️ 19시 10분 전까지 택시 탑승</div>
-                            <div>✔️ 숙소 위치 [<a href="https://maps.app.goo.gl/e5JTtpfL4FhmXm6T9">지도 링크</a>]</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/e5JTtpfL4FhmXm6T9" class="link-btn">숙소위치↗︎</a>
                         </div>
                     </div>
 
@@ -359,9 +377,12 @@ h2 {
                         <div class="transport">버스 & 광역전철(RERC) (1시간 소요)</div>
                         <div class="activity">숙소 ➡️ 베르사유 궁전 / 마트 점심 구매
                         </div>
-                        <div class="info-box">
-                            <div>✔️ 경로 [<a href="https://maps.app.goo.gl/RhUJd4bUcBuU85fx7">지도 링크</a>]</div>
-                            <div>✔️ 마트 [<a href="https://maps.app.goo.gl/FEqSuGXC7Xj2WJKHA">지도 링크</a>], 베이커리 [<a href="https://maps.app.goo.gl/vDHK15pLz2jFUmhZ8">지도 링크</a>]</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/RhUJd4bUcBuU85fx7" class="link-btn">경로↗︎</a>
+                            <a href="https://blog.naver.com/jjingutravel/223529869298" class="link-btn">광역전철 티켓구매 방법↗︎</a>
+                            <a href="https://maps.app.goo.gl/vDHK15pLz2jFUmhZ8" class="link-btn">교통카드↗︎</a>
+                            <a href="https://maps.app.goo.gl/FEqSuGXC7Xj2WJKHA" class="link-btn">마트↗︎</a>
+                            <a href="https://maps.app.goo.gl/vDHK15pLz2jFUmhZ8" class="link-btn">베이커리↗︎</a>
                         </div>
                     </div>
 
@@ -369,13 +390,13 @@ h2 {
                         <div class="time">9:00 - 14:30</div>
                         <div class="transport">도보, 쁘티트레인 (현장예매)</div>
                         <div class="activity">베르사유 궁전 내부 / 정원 / 점심 피크닉</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/EdMzTtuiAjrgKgJA9" class="link-btn">베르사유 궁전↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/1-1.%20%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B2.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/1-2.%20%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B2%E1%84%80%E1%85%AE%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%AB.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/1-3.%20%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B2%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%8B%E1%85%AF%E1%86%AB.png?raw=true">
-                        </div>
-                        <div class="info-box">
-                            <div>✔️ 베르사유 궁전 [<a href="https://maps.app.goo.gl/EdMzTtuiAjrgKgJA9">지도 링크</a>]</div>
                         </div>
                     </div>
 
@@ -383,16 +404,20 @@ h2 {
                         <div class="time">14:30 - 15:30</div>
                         <div class="transport">광역전철(RERC) (40분 소요)</div>
                         <div class="activity">베르사유 궁전 ➡️ 파리 시내</div>
-                        <div class="info-box">
-                            <div>✔️ 경로 [<a href="https://maps.app.goo.gl/Qvbr3SG7ocK2FgU9A">지도 링크</a>]</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/Qvbr3SG7ocK2FgU9A" class="link-btn">경로↗︎</a>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">15:30 ~</div>
-                        <div class="transport">도보</div>
+                        <div class="transport">도보 / 대중교통</div>
                         <div class="activity">에펠탑(마르스 광장, 트로카데로 광장) ➡️</div>
                         <div class="activity">에투알 개선문 ➡️ 샹젤리제 거리 ➡️ 프리팔레 ➡️ 알렉상드르 3세 다리 ➡️ 띌르히 가든</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/CEXCGU8NDMNyvGrv9" class="link-btn">에펠탑↗︎</a>
+                            <a href="https://maps.app.goo.gl/7BpLhsr8fNsvUd1T9" class="link-btn">에투알 개선문↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/2-1.%20%E1%84%90%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8F%E1%85%A1%E1%84%83%E1%85%A6%E1%84%85%E1%85%A9%E1%84%80%E1%85%AA%E1%86%BC%E1%84%8C%E1%85%A1%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/2-2.%20%E1%84%8B%E1%85%A6%E1%84%90%E1%85%AE%E1%84%8B%E1%85%A1%E1%86%AF%E1%84%80%E1%85%A2%E1%84%89%E1%85%A5%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB.png?raw=true">
@@ -400,8 +425,11 @@ h2 {
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="transport">지하철 & 도보</div>
+                        <div class="transport">도보 / 대중교통</div>
                         <div class="activity">저녁식사 / 휴식</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/EEgh5ip23RL3K7BMA" class="link-btn">레스토랑↗︎</a>
+                        </div>
                     </div>
                 </div>
 
@@ -440,23 +468,20 @@ h2 {
                         <div class="time">8:00 - 10:30</div>
                         <div class="transport">버스 & 퓨니쿨라</div>
                         <div class="activity">숙소 ➡️ 몽마르뜨 언덕 / 성당 ➡️ 숙소</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/5gXszEweuv3U62pz9" class="link-btn">몽마르뜨 언덕/성당↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/3-1.%20%E1%84%86%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A1%E1%84%85%E1%85%B3%E1%84%84%E1%85%B3%E1%84%89%E1%85%A5%E1%86%BC%E1%84%83%E1%85%A1%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/3-2.%20%E1%84%86%E1%85%A9%E1%86%BC%E1%84%86%E1%85%A1%E1%84%85%E1%85%B3%E1%84%84%E1%85%B3%E1%84%8B%E1%85%A5%E1%86%AB%E1%84%83%E1%85%A5%E1%86%A8.png?raw=true">
-                        </div>
-                        <div class="info-box">
-                            <div>✔️ 몽마르뜨 언덕/성당 [<a href="https://maps.app.goo.gl/5gXszEweuv3U62pz9">지도 링크</a>]</div>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">10:30 - 12:00</div>
-                        <div class="transport">샌딩택시 (1시간 30분 소요)</div>
+                        <div class="transport">샌딩택시 (1시간 30분 소요) <span class="point">*11시 30분 전까지 탑승</span></div>
                         <div class="activity">
                             숙소 ➡️ 파리(샤를드골)공항
-                        </div>
-                        <div class="info-box">
-                            <div>✔️ 숙소 앞에서 11시 택시 탑승</div>
                         </div>
                     </div>
 
@@ -467,22 +492,25 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">15:00 - 16:20</div>
-                        <div class="transport">비행기 (1시간 20분 소요)</div>
-                        <div class="activity">파리공항 ➡️ 스위스공항</div>
+                        <div class="transport">비행기 (1시간 20분 소요) - 스위스항공</div>
+                        <div class="activity">파리파리(샤를드골)공항 ➡️ 스위스(취리히)공항</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">17:00</div>
                         <div class="transport">Airport Center 2층 (알라모)</div>
                         <div class="activity">렌트카 픽업</div>
+                        <div class="btn-row">
+                            <a href="https://blog.naver.com/celine_44/223980177210" class="link-btn">렌트가 리뷰↗︎</a>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">17:20 - 19:00</div>
                         <div class="transport">렌트카 (1시간 20분 소요)</div>
-                        <div class="activity">스위스공항 ➡️ 빈사의 사자장
-                            <br />
-                            <span class="red">쿱마트 주차</span>
+                        <div class="activity">스위스공항 ➡️ 빈사의 사자장</div>
+                        <div class="btn-row">
+                            <a href="https://www.parkopedia.com/parking/carpark/city_parking/6000/luzern/?arriving=202605231630&leaving=202605231830" class="link-btn">주차장↗︎</a>
                         </div>
                     </div>
 
@@ -490,6 +518,11 @@ h2 {
                         <div class="time">19:00 - 20:00</div>
                         <div class="transport">도보, 렌트카 (근처임)</div>
                         <div class="activity">빈사의 사자장 / 숙소 체크인</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/BBN4zySAgwUYCxky5" class="link-btn">빈사의 사자상↗︎</a>
+                            <a href="https://maps.app.goo.gl/HX5TsPvwEucQFD66A" class="link-btn">숙소 위치↗︎</a>
+                            <a href="https://www.parkopedia.com/parking/carpark/kesselturm/6003/luzern/?arriving=202605231630&leaving=202605231830" class="link-btn">주차장↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/4-1.%20%E1%84%87%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%89%E1%85%A1%E1%84%8C%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/4-2.%20%E1%84%87%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A1%E1%84%8B%E1%85%B4%E1%84%89%E1%85%A1%E1%84%8C%E1%85%A1%E1%84%89%E1%85%A1%E1%86%BC.png?raw=true">
@@ -500,6 +533,9 @@ h2 {
                         <div class="time"> 20:30 ~</div>
                         <div class="transport">도보</div>
                         <div class="activity">카펠교 / 저녁식사 / 휴식</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/56Dt5NR1n7WhJ2b67" class="link-btn">카펠교↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/5-1.%20%E1%84%8F%E1%85%A1%E1%84%91%E1%85%A6%E1%86%AF%E1%84%80%E1%85%AD.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/5-2.%20%E1%84%8F%E1%85%A1%E1%84%91%E1%85%A6%E1%86%AF%E1%84%80%E1%85%AD.png?raw=true">
@@ -541,24 +577,36 @@ h2 {
                     <div class="timeline-item">
                         <div class="time">6:30 ~ 8:30</div>
                         <div class="transport">렌트카 (1시간 40분 소요)</div>
-                        <div class="activity">숙소 체크아웃 ➡️ 그린델발트(숙소) / 쿱마트 먹거리 구매
+                        <div class="activity">숙소 체크아웃 ➡️ 그린델발트(숙소) 주차
                             <br />
-                            <span class="red">숙소 주차</span>
+                            <span class="red">➡️ 마트에서 먹거리 구매</span>
+                        </div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/2uuTGob7qXPuDno37" class="link-btn">숙소 위치↗︎</a>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">9:00 - 10:00</div>
-                        <div class="transport">곤돌라 (55분 소요, 아이거글레처 경유)</div>
+                        <div class="transport">곤돌라 & 열차(55분 소요) <span class="point">*8:46 / 9:16 탑승, 무조건 빠른게 좋음</span><br/>
+                            열차 진행방향 오른쪽 앉기 - 마테호른 감상
+                        </div>
                         <div class="activity">
-                            그린델발트 ➡️ 융프라우요흐 / vip패스 현장발권<br />
-                            <span class="red">★ 8:46 / 9:16</span>
+                            그린델발트 ➡️ 융프라우요흐 (vip패스 현장발권)
+                        </div>
+                        <div class="btn-row">
+                            <a href="https://cafe.naver.com/momsolleh/838864" class="link-btn">vip패스 혜택↗︎</a>
+                            <a href="https://m.blog.naver.com/bbkkstory/223919299466" class="link-btn">융프라우 좌석예약↗︎</a>
                         </div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">10:00 - 12:00</div>
                         <div class="activity">융프라우요흐 전망대 / 빙하 동굴 / 점심식사(신라면) or 눈썰매</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/oHFsU95WdLqqNohf7" class="link-btn">융프라우요흐↗︎</a>
+                            <a href="https://www.instagram.com/reel/DYfgIGUzCns/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="link-btn">융프라우 지름길↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/6-1.%20%E1%84%8B%E1%85%B2%E1%86%BC%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%8B%E1%85%AD%E1%84%92%E1%85%B3%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%86%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/6-2.%20%E1%84%8B%E1%85%B2%E1%86%BC%E1%84%91%E1%85%B3%E1%84%85%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%87%E1%85%B5%E1%86%BC%E1%84%92%E1%85%A1%E1%84%83%E1%85%A9%E1%86%BC%E1%84%80%E1%85%AE%E1%86%AF.png?raw=true">
@@ -569,6 +617,9 @@ h2 {
                         <div class="time">12:00 - 14:00</div>
                         <div class="transport">트레킹 (2시간 소요)</div>
                         <div class="activity">37번 트레킹 - 아이거글레처 / 폴보덴 호수 / 클라이네샤이덱</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/GcvRjcVEpwzV295s9" class="link-btn">경로↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/7-1.%2037%E1%84%87%E1%85%A5%E1%86%AB%E1%84%90%E1%85%B3%E1%84%85%E1%85%A6%E1%84%8F%E1%85%B5%E1%86%BC.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/7-2.%20%E1%84%91%E1%85%A9%E1%86%AF%E1%84%87%E1%85%A9%E1%84%83%E1%85%A6%E1%86%AB%E1%84%92%E1%85%A9%E1%84%89%E1%85%AE.png?raw=true">
@@ -577,9 +628,8 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">14:00 - 15:00</div>
-                        <div class="transport">산악열차 (40분 소요)</div>
+                        <div class="transport">산악열차 (40분 소요) <span class="point">*13:44 / 14:14 탑승</span></div>
                         <div class="activity">클라이네샤이덱 ➡️ 라우터브루넨<br />
-                            <span class="red">★ 13:44 / 14:14</span>
                         </div>
                     </div>
 
@@ -587,6 +637,9 @@ h2 {
                         <div class="time">14:30 - 15:30</div>
                         <div class="transport">도보, 트레킹 (1시간 소요)</div>
                         <div class="activity">슈타우바흐 폭포 / 전망대</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/UvbWfStFjLq5cSfp8" class="link-btn">슈타우바흐 폭포↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/8-1.%20%E1%84%89%E1%85%B2%E1%84%90%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%87%E1%85%A1%E1%84%92%E1%85%B3%E1%84%91%E1%85%A9%E1%86%A8%E1%84%91%E1%85%A9.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/8-2.%20%E1%84%89%E1%85%B2%E1%84%90%E1%85%A1%E1%84%8B%E1%85%AE%E1%84%87%E1%85%A1%E1%84%92%E1%85%B3%E1%84%91%E1%85%A9%E1%86%A8%E1%84%91%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%86%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2.png?raw=true">
@@ -596,9 +649,8 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">15:30 - 16:00</div>
-                        <div class="transport">산악열차 & 곤돌라 (26분 소요, 뱅겐 경유)</div>
-                        <div class="activity">라우터브루넨 ➡️ 멘리헨<br />
-                            <span class="red">★ 15:30</span>
+                        <div class="transport">산악열차 & 곤돌라 (26분 소요, 뱅겐 경유) <span class="point">*15:30 탑승</span></div>
+                        <div class="activity">라우터브루넨 ➡️ 멘리헨
                         </div>
                     </div>
 
@@ -606,6 +658,9 @@ h2 {
                         <div class="time">16:00 - 17:00</div>
                         <div class="transport">트레킹 (50분 소요)</div>
                         <div class="activity">멘리헨 전망대</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/WwFtxKN6jGXjffrt8" class="link-btn">멘리헨 정망대↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/9-1.%20%E1%84%86%E1%85%A6%E1%86%AB%E1%84%85%E1%85%B5%E1%84%92%E1%85%A6%E1%86%AB.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/9-2.%20%E1%84%86%E1%85%A6%E1%86%AB%E1%84%85%E1%85%B5%E1%84%92%E1%85%A6%E1%86%AB%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%86%E1%85%A1%E1%86%BC%E1%84%83%E1%85%A2.png?raw=true">
@@ -614,14 +669,12 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">17:00 - 17:30</div>
-                        <div class="transport">곤돌라 (20분 소요)</div>
-                        <div class="activity">멘리헨 ➡️ 그린델발트(숙소)<br />
-                            <span class="red">★ (막)17:00</span>
-                        </div>
+                        <div class="transport">곤돌라 (20분 소요) <span class="point">*막차 17:00 탑승</span></div>
+                        <div class="activity">멘리헨 ➡️ 그린델발트(숙소)</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">19:30 ~</div>
+                        <div class="time">18:00 ~</div>
                         <div class="activity">저녁식사 / 휴식</div>
                     </div>
                 </div>
@@ -661,24 +714,23 @@ h2 {
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="time">07:20 - 07:50</div>
-                        <div class="transport">버스 (18분 소요)</div>
-                        <div class="activity">숙소 ➡️ 그린델발트 / 점심 도시락 미리 챙기기<br />
-                            <span class="red">121/122/123버스, 07:34</span><br />
-                        </div>
+                        <div class="transport">버스(121/122/123) (18분 소요) / 도보 (20분 소요)</div>
+                        <div class="activity">숙소 ➡️ 그린델발트 / 점심 도시락 미리 챙기기</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">8:00 - 8:30</div>
-                        <div class="transport">곤돌라 (30분 소요)</div>
-                        <div class="activity">그린델발트 ➡️ 피르스트<br />
-                            <span class="red">★ (첫)8:00</span>
-                        </div>
+                        <div class="transport">곤돌라 (30분 소요) <span class="point">*첫차 8:00 탑승</span></div>
+                        <div class="activity">그린델발트 ➡️ 피르스트</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">8:30 - 9:20</div>
+                        <div class="time">8:30 - 9:30</div>
                         <div class="transport">도보</div>
                         <div class="activity">피르트스 절벽 산책로(클리프 워크)</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/d7w2PkkicUgAcqRb7" class="link-btn">절벽 산책로↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/10-1.%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%84%91%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/10-2.%20%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%84%91%E1%85%B3%E1%84%8B%E1%85%AF%E1%84%8F%E1%85%B3.png?raw=true">
@@ -687,9 +739,12 @@ h2 {
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">9:20 - 11:00</div>
+                        <div class="time">9:30 - 10:30</div>
                         <div class="transport">액티비티로 이동</div>
                         <div class="activity">플라이어 (피르스트 ➡️ 슈렉펠트)</div>
+                        <div class="btn-row">
+                            <a href="https://first-wait.jungfrau.ch/" class="link-btn">액티비티 실시간 대기↗︎</a>
+                        </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/11-1.%20%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5.png?raw=true">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/11-2.%20%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%8B%E1%85%A5.png?raw=true">
@@ -697,54 +752,38 @@ h2 {
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">11:00 - 11:40</div>
-                        <div class="transport">액티비티로 이동</div>
-                        <div class="activity">마운틴 카트 (슈렉펠트 ➡️ 보어트)</div>
-                        <div class="image-box">
-                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/12-1.%20%E1%84%86%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%90%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%A1%E1%84%90%E1%85%B3.png?raw=true">
-                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/12-2.%20%E1%84%86%E1%85%A1%E1%84%8B%E1%85%AE%E1%86%AB%E1%84%90%E1%85%B5%E1%86%AB%E1%84%8F%E1%85%A1%E1%84%90%E1%85%B3.png?raw=true">
+                        <div class="time">10:30 - 11:00</div>
+                        <div class="transport">곤돌라 (25분 소요) <span class="point">*10:39에는 타야함</span></div>
+                        <div class="activity">슈렉펠트 ➡️ 그린델발트 </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">11:00 - 11:45</div>
+                        <div class="transport">버스 / 도보 (18분 소요)</div>
+                        <div class="activity">그린델발트 ➡️ 그린델발트</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/qvvuvD8TAJ9uJspG9" class="link-btn">경로↗︎</a>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">11:45 - 12:00</div>
-                        <div class="transport">곤돌라 (16분 소요)</div>
-                        <div class="activity">보어트 ➡️ 그린델발트 </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">12:00 - 12:50</div>
-                        <div class="transport">버스 (18분 소요)</div>
-                        <div class="activity">그린델발트 ➡️ 그린델발트 / 점심</div>
-                        <div class="line">밑에 일정 '유람선 - 증기기관' 순서 바뀔 수 있음</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">12:40 - 13:30</div>
-                        <div class="transport">기차 (33분 소요)</div>
-                        <div class="activity">그린델발트 ➡️ 인터라켄 동역<br />
-                            <span class="red">★ 12:51 - 13:24</span>
+                        <div class="time">11:45 - 12:55</div>
+                        <div class="transport">기차 (1시간 2분 소요) <span class="point">*11:51 - 12:53</span></div>
+                        <div class="activity">그린델발트 ➡️ 브리엔츠 / 점심</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/pwq8RAwVDveXBk349" class="link-btn">경로↗︎</a>
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">14:00 - 15:30</div>
-                        <div class="transport">유람선 (이젤발트, 기스바흐 경유 관광X)</div>
-                        <div class="activity">인터라켄 선착장 ➡️ 브리엔츠<br />
-                            <span class="red">★ 14:07 - 15:20</span>
+                        <div class="time">13:45 - 15:15</div>
+                        <div class="transport">증기기관차 (왕복 1시간 30분 소요, 편도 30분 소요)<br />
+                            <span class="point">*출발시간 30분 전 대기, 13:45 출발> 14:45 출발<br />*상행 - 좌측자리, 하행 - 우측자리</span>
                         </div>
-                        <div class="image-box">
-                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-1.%20%E1%84%87%E1%85%B3%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%8E%E1%85%B3%E1%84%92%E1%85%A9%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B2%E1%84%85%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A5%E1%86%AB.png?raw=true">
-                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-2.%20%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%A6%E1%86%AF%E1%84%87%E1%85%A1%E1%86%AF%E1%84%90%E1%85%B3.png?raw=true">
-                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-3.%20%E1%84%80%E1%85%B5%E1%84%89%E1%85%B3%E1%84%87%E1%85%A1%E1%84%92%E1%85%B3%E1%84%91%E1%85%A9%E1%86%A8%E1%84%91%E1%85%A9.png?raw=true">
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">15:45 - 17:30</div>
-                        <div class="transport">증기기관차 (1시간 30분 소요)</div>
-                        <div class="activity">로트호른 열차 왕복 (프라날프 중간역행)<br />
-                            <span class="red">★ 상행(막)15:45-16:15 (왼), 하행(막)16:45-17:15 (오)</span>
+                        <div class="activity">로트호른 열차 왕복 (프라날프 중간역행)</div>
+                        <div class="btn-row">
+                            <a href="https://shop.brienz-rothorn-bahn.ch/de/ticketshop?_gl=1*1falmes*_ga*MTc5MTk2MDUwNC4xNzcyMjA4MzEz*_ga_B4BKKG09QR*czE3Nzk2MDkxMDYkbzQkZzAkdDE3Nzk2MDkxMDYkajYwJGwwJGgw" class="link-btn">티켓예매↗︎</a>
+                            <a href="https://blog.naver.com/annamon20/223892051428" class="link-btn">열차정보↗︎</a>
                         </div>
                         <div class="image-box">
                             <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/14-1.%20%E1%84%85%E1%85%A9%E1%84%90%E1%85%B3%E1%84%92%E1%85%A9%E1%84%85%E1%85%B3%E1%86%AB.png?raw=true">
@@ -754,40 +793,52 @@ h2 {
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">17:30 - 18:30</div>
-                        <div class="transport">기차 (56분 소요, 인터라켄 경유)</div>
-                        <div class="activity">브리엔츠 ➡️ 그린델발트<br />
-                            <span class="red">17:37</span>
+                        <div class="time">15:40 - 16:55</div>
+                        <div class="transport">유람선 (1시간 15분 소요)</div>
+                        <div class="activity">브리엔츠 ➡️ 인터라켄<br />(이젤발트, 기스바흐 경유 관광X)</div>
+                        <div class="btn-row">
+                            <a href="https://maps.app.goo.gl/XKjvrEWAgjK4vkLM9" class="link-btn">브리엔츠 호수↗︎</a>
+                        </div>
+                        <div class="image-box">
+                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-1.%20%E1%84%87%E1%85%B3%E1%84%85%E1%85%B5%E1%84%8B%E1%85%A6%E1%86%AB%E1%84%8E%E1%85%B3%E1%84%92%E1%85%A9%E1%84%89%E1%85%AE%E1%84%8B%E1%85%B2%E1%84%85%E1%85%A1%E1%86%B7%E1%84%89%E1%85%A5%E1%86%AB.png?raw=true">
+                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-2.%20%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%A6%E1%86%AF%E1%84%87%E1%85%A1%E1%86%AF%E1%84%90%E1%85%B3.png?raw=true">
+                            <img src="https://github.com/oknara/trip-schedule-image/blob/main/%EC%8A%A4%EC%9C%84%EC%8A%A4/13-3.%20%E1%84%80%E1%85%B5%E1%84%89%E1%85%B3%E1%84%87%E1%85%A1%E1%84%92%E1%85%B3%E1%84%91%E1%85%A9%E1%86%A8%E1%84%91%E1%85%A9.png?raw=true">
                         </div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">18:40 ~</div>
+                        <div class="time">17:00 - 17:35</div>
+                        <div class="transport">기차(R61) (34분 소요) <span class="point">*17:04 / 17:34 출발</span></div>
+                        <div class="activity">인터라켄 ➡️ 그린델발트</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">18:00 ~</div>
                         <div class="activity">저녁식사 / 휴식</div>
                     </div>
-                </div>
+                
+                    <div class="meal-row">
+                        <div class="meal-card">
+                            <div class="meal-title">조식</div>
+                            <div class="meal-content">숙소</div>
+                        </div>
 
-                <div class="meal-row">
-                    <div class="meal-card">
-                        <div class="meal-title">조식</div>
-                        <div class="meal-content">숙소</div>
+                        <div class="meal-card">
+                            <div class="meal-title">중식</div>
+                            <div class="meal-content">틈틈히 먹기ㅠ</div>
+                        </div>
+
+                        <div class="meal-card">
+                            <div class="meal-title">석식</div>
+                            <div class="meal-content">그린델발트 마을</div>
+                        </div>
                     </div>
 
-                    <div class="meal-card">
-                        <div class="meal-title">중식</div>
-                        <div class="meal-content">그린델발트 마을</div>
+                    <div class="hotel-box">
+                        호텔 : 아이거로지 시크 
+                        [<a href="https://www.agoda.com/ko-kr/mountain-apartment_2/hotel/grindelwald-ch.html?cid=1807734&currency=KRW&checkin=2026-05-28&checkout=2026-05-30&numberofchildren=0&mcid=28152&masterroomid=821024634&hid=52499270&adults=4&rooms=1&los=2&pslc=1&ds=ovVFmVTZKKlzMxGQ">관련 링크</a>]
+                        - 패밀리룸 (발코니)
                     </div>
-
-                    <div class="meal-card">
-                        <div class="meal-title">석식</div>
-                        <div class="meal-content">그린델발트 마을</div>
-                    </div>
-                </div>
-
-                <div class="hotel-box">
-                    호텔 : 아이거로지 시크 
-                    [<a href="https://www.agoda.com/ko-kr/mountain-apartment_2/hotel/grindelwald-ch.html?cid=1807734&currency=KRW&checkin=2026-05-28&checkout=2026-05-30&numberofchildren=0&mcid=28152&masterroomid=821024634&hid=52499270&adults=4&rooms=1&los=2&pslc=1&ds=ovVFmVTZKKlzMxGQ">관련 링크</a>]
-                    - 패밀리룸 (발코니)
                 </div>
             </div>
 
@@ -807,13 +858,13 @@ h2 {
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">10:30</div>
+                        <div class="time">10:30 - 13:00</div>
                         <div class="activity">렌트카 반납 / 공항 체크인 / 점심</div>
                     </div>
 
                     <div class="timeline-item">
                         <div class="time">13:30 - 14:05</div>
-                        <div class="transport">비행기 (15시간 소요, 홍콩 경유)</div>
+                        <div class="transport">비행기 (15시간 소요, 홍콩 경유) - 캐세이퍼시픽 항공</div>
                         <div class="activity">스위스공항 ➡️ 인천공항</div>
                     </div>
                 </div>
@@ -852,7 +903,7 @@ h2 {
 
                     <div class="timeline-item">
                         <div class="time">16:00 - 17:00</div>
-                        <div class="transport">지하철 (40분 소요)</div>
+                        <div class="transport">지하철 (40분 소요) / 택시</div>
                         <div class="activity">인천공항 ➡️ 김포공항</div>
                     </div>
 
@@ -935,14 +986,13 @@ h2 {
                     <div class="timeline-item">
                         <div class="time">생필품</div>
                         <div class="activity">
-                            🔘 휴대폰 스트랩(소연 준비)<br>
+                            🔘 휴대폰 스트랩(소연)<br>
                             🔘 멀티탭(소연 준비)<br>
-                            🔘 고산병약(성민 준비), 타이레롤(소연 준비), 밴드<br>
-                            🔘 스위스&한국 국기(소연 준비)<br>
+                            🔘 고산병약(성민), 타이레롤(소연), 밴드(소연)<br>
                             🔘 햇반, 김치, 국 등 & 일회용품<br>
-                            🔘 물티슈(소연 준비)<br>
+                            🔘 물티슈(소연)<br>
                             🔘 선글라스, 장갑<br>
-                            🔘 지퍼백&크린백(소연 준비)<br>
+                            🔘 지퍼백&크린백(소연)<br>
                         </div>
                     </div>
                 </div>
